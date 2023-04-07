@@ -8,7 +8,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      // sans: ["var(--sans)"],
+      // bebas: ["var(--bebas)"],
+    },
+    extend: {
+      backgroundImage: {
+        backgroundAbout: "url('/images/background.png')",
+      },
+    },
   },
   plugins: [],
 };
