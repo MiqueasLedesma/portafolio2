@@ -1,4 +1,5 @@
 import About from "@/components/about/About";
+import Arrow from "@/components/arrow/Arrow";
 import Contact from "@/components/contact/Contact";
 import { useLayoutContext } from "@/components/layout/Layout";
 import Proyects from "@/components/proyects/Proyects";
@@ -8,8 +9,6 @@ import React from "react";
 export default function Home() {
   const layoutState = useLayoutContext();
   const { currentPage, setCurrentPage } = layoutState;
-
-  // console.log(currentPage);
 
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
@@ -44,22 +43,27 @@ export default function Home() {
   };
 
   return (
-    <div
-      onScroll={() => handleScroll()}
-      className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen"
-    >
-      <div id="about" className="snap-start" ref={aboutRef}>
-        <About />
+    <>
+      <div className={`z-10 absolute bottom-0 mx-[50%] transition-all duration-300 my-12 ${currentPage == "contact" && 'rotate-180'}`}>
+        <Arrow />
       </div>
-      <div id="proyects" className="snap-start" ref={proyectsRef}>
-        <Proyects />
+      <div
+        onScroll={() => handleScroll()}
+        className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen"
+      >
+        <div id="about" className="snap-start" ref={aboutRef}>
+          <About />
+        </div>
+        <div id="skills" className="snap-start" ref={skillsRef}>
+          <Skills />
+        </div>
+        <div id="proyects" className="snap-start" ref={proyectsRef}>
+          <Proyects />
+        </div>
+        <div id="contact" className="snap-start" ref={contactRef}>
+          <Contact />
+        </div>
       </div>
-      <div id="skills" className="snap-start" ref={skillsRef}>
-        <Skills />
-      </div>
-      <div id="contact" className="snap-start" ref={contactRef}>
-        <Contact />
-      </div>
-    </div>
+    </>
   );
 }

@@ -1,7 +1,5 @@
 import * as React from "react";
 import { useLayoutContext } from "../layout/Layout";
-import menuLogo from "../../public/icons/menu-icon.svg";
-import Image from "next/image";
 import selectColorNavbar from "@/utils/selectColorNavbar";
 
 interface props {}
@@ -22,18 +20,17 @@ export default function Navbar({}: props) {
     }
   };
 
-  const menuHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-  };
+  // const menuHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+  // };
 
   return (
-    <nav className="fixed w-full h-20 p-6 top-0 flex bg-opacity-30 items-center justify-between">
-      <h2 className={`text-2xl max-md:text-xl text-white`}>
+    <nav className="fixed w-full h-20 p-6 top-0 flex bg-opacity-30 items-center justify-between select-none z-20">
+      <h2
+        className={`text-2xl max-md:text-xl font-normal ${page && selectColorNavbar(page)}`}
+      >
         Hola 👋, soy Miqueas Ledesma
       </h2>
-      <button onClick={menuHandle} className="sm:hidden">
-        <Image src={menuLogo} width={26} height={26} alt="menulogo.svg" />
-      </button>
       <ul
         className={`flex flex-row justify-center gap-8 ${
           page && selectColorNavbar(page)
@@ -42,35 +39,35 @@ export default function Navbar({}: props) {
         <li
           value="about"
           onClick={handleClick}
-          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:max-md:text-sm ${
-            currentPage == "about" && "border-b-2 text-lg"
+          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            currentPage == "about" && "border-b-2 text-lg border-current"
           }`}
         >
           Sobre mí
         </li>
         <li
-          value="proyects"
-          onClick={handleClick}
-          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:max-md:text-sm ${
-            currentPage == "proyects" && "border-b-2 text-lg"
-          }`}
-        >
-          Proyectos
-        </li>
-        <li
           value="skills"
           onClick={handleClick}
-          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:max-md:text-sm ${
-            currentPage == "skills" && "border-b-2 text-lg"
+          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            currentPage == "skills" && "border-b-2 text-lg border-current"
           }`}
         >
           Habilidades
         </li>
         <li
+          value="proyects"
+          onClick={handleClick}
+          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            currentPage == "proyects" && "border-b-2 text-lg border-current"
+          }`}
+        >
+          Proyectos
+        </li>
+        <li
           value="contact"
           onClick={handleClick}
-          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:max-md:text-sm ${
-            currentPage == "contact" && "border-b-2 text-lg"
+          className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            currentPage == "contact" && "border-b-2 text-lg border-current"
           }`}
         >
           Contacto

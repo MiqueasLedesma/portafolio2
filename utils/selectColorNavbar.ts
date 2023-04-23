@@ -5,13 +5,13 @@ interface props {
 export default function selectColorNavbar({ currentPage }: props) {
   switch (currentPage) {
     case "about":
-      return "text-white";
+      return "text-slate-800";
     case "contact":
       return "text-black";
     case "proyects":
       return "text-black";
     case "skills":
-      return "text-white";
+      return "text-black";
     default:
       return "text-white";
   }
