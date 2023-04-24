@@ -25,7 +25,7 @@ export default function About({}: props) {
 
   return (
     <section className="h-screen w-screen flex flex-row relative">
-      <div className="h-screen w-1/2 bg-slate-300 p-20  items-center gap-8 flex flex-col max-md:w-screen">
+      <div className="h-screen w-1/2 bg-gradient-to-tl from-sky-100 via-slate-200 to-rose-100 p-20 items-center gap-8 flex flex-col max-md:w-screen">
         <h2 className="text-blue-600 text-4xl font-bold select-none">
           <TypeAnimation
             sequence={[

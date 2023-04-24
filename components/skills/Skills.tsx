@@ -1,5 +1,5 @@
 import * as React from "react";
-import CardSkill from "../cardSkill/CardSkill";
+import Carrousely from "../carrousely/carrousely";
 
 interface props {}
 
@@ -20,11 +20,11 @@ export default function Skills({}: props) {
   };
 
   return (
-    <section className="w-screen h-screen bg-slate-50 p-20 snap-start">
-      <h2 className="text-2xl font-bold border-b-2 w-fit border-current">
-        Tecnologías:
-      </h2>
-      <CardSkill {...cardProps} />
+    <section className="w-screen h-screen bg-blue-700 p-20 snap-start text-white flex flex-col gap-8">
+      <h2 className="text-3xl font-bold underline">Tecnologías:</h2>
+      <h4 className="text-2xl font-semibold underline">Front-end:</h4>
+      <Carrousely />
+      <h4 className="text-2xl font-semibold underline">Back-end:</h4>
     </section>
   );
 }

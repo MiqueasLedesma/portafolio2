@@ -11,7 +11,7 @@ export default function selectColorNavbar({ currentPage }: props) {
     case "proyects":
       return "text-black";
     case "skills":
-      return "text-black";
+      return "text-white";
     default:
       return "text-white";
   }

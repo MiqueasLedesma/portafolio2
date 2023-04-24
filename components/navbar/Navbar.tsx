@@ -29,7 +29,7 @@ export default function Navbar({}: props) {
       <h2
         className={`text-2xl max-md:text-xl font-normal ${page && selectColorNavbar(page)}`}
       >
-        Hola 👋, soy Miqueas Ledesma
+        Miqueas Ledesma
       </h2>
       <ul
         className={`flex flex-row justify-center gap-8 ${
