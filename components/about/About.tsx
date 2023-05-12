@@ -24,7 +24,7 @@ export default function About({}: props) {
   };
 
   return (
-    <section className="h-screen w-screen flex flex-row relative">
+    <section className="h-screen w-screen flex flex-row relative overflow-hidden">
       <div className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col max-md:w-screen">
         <h2 className="text-blue-600 text-5xl select-none mt-4 font-bold">
           Desarrollador
@@ -58,7 +58,7 @@ export default function About({}: props) {
             onClick={handleClick}
             className="text-white font-bold py-2 px-4  rounded-md shadow-sm shadow-black bg-blue-500 hover:bg-blue-800 transition-all duration-500"
           >
-            Concatctarme
+            Contactarme
           </button>
           <button
             onClick={handleCV}

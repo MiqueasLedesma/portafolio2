@@ -29,7 +29,7 @@ export default function Navbar({}: props) {
 
   return (
     <div className={poppins.className}>
-      <nav className="fixed w-full h-20 p-6 top-0 flex bg-gradient-to-b from-slate-900 from-0% to-transparent items-center justify-between select-none z-20">
+      <nav className="fixed w-full h-20 p-6 top-0 flex items-center justify-between select-none z-20">
         <h2
           className={`text-2xl max-md:text-xl font-semibold ${
             page && selectColorNavbar(page)
@@ -38,7 +38,9 @@ export default function Navbar({}: props) {
           Miqueas Ledesma
         </h2>
         <ul
-          className={`flex flex-row justify-center gap-8 text-white max-md:text-sm font-semibold max-sm:hidden max-md:gap-4`}
+          className={`flex flex-row justify-center gap-8 max-md:text-sm font-semibold max-sm:hidden max-md:gap-4 ${
+            page && selectColorNavbar(page)
+          }`}
         >
           <li
             value="about"
