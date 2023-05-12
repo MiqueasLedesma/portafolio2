@@ -1,5 +1,12 @@
 import * as React from "react";
 import Navbar from "../navbar/Navbar";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--poppins",
+});
 
 interface props {
   children: JSX.Element;
@@ -21,7 +28,7 @@ export default function Layout({ children }: props) {
   return (
     <Context.Provider value={{ currentPage, setCurrentPage }}>
       <Navbar />
-      <main>{children}</main>
+      <main className={`${poppins.variable}`}>{children}</main>
     </Context.Provider>
   );
 }

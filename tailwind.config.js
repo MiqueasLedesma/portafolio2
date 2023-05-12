@@ -9,8 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // sans: ["var(--sans)"],
-      // bebas: ["var(--bebas)"],
+      poppins: ["var(--poppins)"],
     },
     extend: {
       backgroundImage: {

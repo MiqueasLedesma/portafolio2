@@ -1,5 +1,4 @@
 import About from "@/components/about/About";
-import Arrow from "@/components/arrow/Arrow";
 import Contact from "@/components/contact/Contact";
 import { useLayoutContext } from "@/components/layout/Layout";
 import Proyects from "@/components/proyects/Proyects";
@@ -43,27 +42,22 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className={`z-10 absolute bottom-0 mx-[50%] transition-all duration-300 my-12 ${currentPage == "contact" && 'rotate-180'}`}>
-        <Arrow />
+    <div
+      onScroll={() => handleScroll()}
+      className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen font-poppins"
+    >
+      <div id="about" className="snap-start" ref={aboutRef}>
+        <About />
       </div>
-      <div
-        onScroll={() => handleScroll()}
-        className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen"
-      >
-        <div id="about" className="snap-start" ref={aboutRef}>
-          <About />
-        </div>
-        <div id="skills" className="snap-start" ref={skillsRef}>
-          <Skills />
-        </div>
-        <div id="proyects" className="snap-start" ref={proyectsRef}>
-          <Proyects />
-        </div>
-        <div id="contact" className="snap-start" ref={contactRef}>
-          <Contact />
-        </div>
+      <div id="skills" className="snap-start" ref={skillsRef}>
+        <Skills />
       </div>
-    </>
+      <div id="proyects" className="snap-start" ref={proyectsRef}>
+        <Proyects />
+      </div>
+      <div id="contact" className="snap-start" ref={contactRef}>
+        <Contact />
+      </div>
+    </div>
   );
 }

@@ -25,17 +25,13 @@ export default function About({}: props) {
 
   return (
     <section className="h-screen w-screen flex flex-row relative">
-      <div className="h-screen w-1/2 bg-gradient-to-tl from-sky-100 via-slate-200 to-rose-100 p-20 items-center gap-8 flex flex-col max-md:w-screen">
-        <h2 className="text-blue-600 text-4xl font-bold select-none">
+      <div className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col max-md:w-screen">
+        <h2 className="text-blue-600 text-5xl select-none mt-4 font-bold">
+          Desarrollador
+        </h2>
+        <h2 className="text-blue-600 text-5xl select-none">
           <TypeAnimation
-            sequence={[
-              "Desarrollador Front-end",
-              2000,
-              "Desarrollador Back-end",
-              1500,
-              "Desarrollador Full-stack",
-              2000,
-            ]}
+            sequence={["Front-end", 2000, "Back-end", 1500, "Full-stack", 2000]}
             speed={10}
             style={{ fontSize: "1em", fontWeight: "bold" }}
             repeat={Infinity}
@@ -56,7 +52,7 @@ export default function About({}: props) {
           </p>
         </div>
 
-        <div className="flex flex-row gap-8 my-auto">
+        <div className="flex flex-row gap-8 my-4">
           <button
             value={"contact"}
             onClick={handleClick}
