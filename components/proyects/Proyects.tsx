@@ -20,12 +20,12 @@ export default function Proyects({}: props) {
     console.log(device);
   }, [device]);
 
-  const totalPages = Math.ceil(proyectsProps.length / 3);
-
   const selectDevice = (device: string | undefined) => {
     if (device === "Desktop") return 3;
     return 1;
   };
+
+  const totalPages = Math.ceil(proyectsProps.length / selectDevice(device));
 
   const proyectsToRender = proyectsProps.slice(
     (current - 1) * selectDevice(device),
