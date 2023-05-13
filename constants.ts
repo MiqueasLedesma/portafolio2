@@ -69,4 +69,22 @@ const cardProps = [
   },
 ];
 
-export { cardProps };
+const proyectsProps = [
+  {
+    image: "images/apptech.png",
+  },
+  {
+    image: "images/appvg.png",
+  },
+  {
+    image: "images/apptech.png",
+  },
+  {
+    image: "images/apptech.png",
+  },
+  {
+    image: "images/appvg.png",
+  },
+];
+
+export { cardProps, proyectsProps };
