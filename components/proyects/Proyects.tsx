@@ -29,6 +29,8 @@ export default function Proyects({}: props) {
     return setCurrent(current - 1);
   };
 
+  const renderDots = (current: number) => {};
+
   return (
     <section className="w-screen h-screen bg-white py-24 p-20 overflow-hidden relative">
       {/* Title */}
