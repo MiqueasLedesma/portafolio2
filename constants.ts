@@ -17,7 +17,7 @@ const cardProps = [
   },
   {
     image: "icons/react-logo.svg",
-    title: "React & React Native",
+    title: "React",
   },
   {
     image: "icons/redux-logo.svg",
@@ -52,10 +52,6 @@ const cardProps = [
     title: "Express",
   },
   {
-    image: "icons/typescript-logo.svg",
-    title: "Typescript",
-  },
-  {
     image: "icons/postgresql-logo.svg",
     title: "PostgreSQL",
   },
@@ -72,18 +68,27 @@ const cardProps = [
 const proyectsProps = [
   {
     image: "images/apptech.png",
+    title: "TechStore",
+    desc: "Ecommerce de tecnologia lorem ipsum etc etc",
+    github: "https://github.com/ricardoyegros/PF-Frontend",
   },
   {
     image: "images/appvg.png",
+    title: "APP-Videogames",
+    desc: "Aplicación de busqueda, filtrado, creación de videojuegos realizada usando Nodejs, Express, PostgreSQL, React, Redux",
+    github: "https://github.com/MiqueasLedesma/Front-PI",
   },
   {
-    image: "images/apptech.png",
+    image: "images/portapp1.png",
+    title: "Portafolio Personal",
+    desc: "Mi primer portafolio realizado en 2022 utilizando Styled-Components",
+    github: "https://github.com/MiqueasLedesma/portafolio",
   },
   {
-    image: "images/apptech.png",
-  },
-  {
-    image: "images/appvg.png",
+    image: "images/estoreapp.png",
+    title: "Frontend E-Store",
+    desc: "alk",
+    github: "",
   },
 ];
 

@@ -1,13 +1,25 @@
 import React from "react";
+import { useLayoutContext } from "../layout/Layout";
 
 type Props = {
   image: string;
+  title: string;
+  desc: string;
+  github: string;
 };
 
 export const CardProyect = (props: Props) => {
-  const { image } = props;
+  const { image, desc, title, github } = props;
+  const { open, setOpen, setModalInfo } = useLayoutContext();
+
+  const handleClick = () => {
+    setOpen(!open);
+    setModalInfo({ image, desc, title, github });
+  };
+
   return (
     <div
+      onClick={handleClick}
       style={{
         backgroundImage: `url(${image})`,
       }}

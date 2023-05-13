@@ -2,10 +2,14 @@ import * as React from "react";
 import { CardSkill } from "../cardSkill/cardSkill";
 import Image from "next/image";
 import { cardProps } from "@/constants";
+import { motion } from "framer-motion";
 
-interface props {}
+interface props {
+  ref: React.RefObject<HTMLDivElement>;
+}
 
-export default function Skills({}: props) {
+export default function Skills(props: props) {
+  const { ref } = props;
   return (
     <section className="w-screen h-screen bg-blue-700 py-24 p-20 snap-start select-none text-white flex flex-col gap-8 overflow-hidden relative">
       <Image
@@ -40,11 +44,17 @@ export default function Skills({}: props) {
         <h1 className="text-4xl font-semibold">Mi stack:</h1>
         <div className="w-[2rem] h-2 rounded-md bg-white my-2"></div>
       </div>
-      <div className="flex flex-row flex-wrap gap-[2rem] justify-center items-center my-auto">
+      <motion.div
+        initial={{ translateX: "50%" }}
+        whileInView={{ translateX: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ amount: 0.5, root: ref }}
+        className="flex flex-row flex-wrap gap-[2rem] justify-center items-center my-auto"
+      >
         {cardProps.map((e) => (
           <CardSkill key={e.image} {...e} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

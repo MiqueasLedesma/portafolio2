@@ -1,6 +1,5 @@
 import * as React from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { FaCircle, FaDotCircle } from "react-icons/fa";
 import { CardProyect } from "../cardProyect/cardProyect";
 import { proyectsProps } from "@/constants";
 
@@ -65,7 +64,7 @@ export default function Proyects({}: props) {
           </button>
         </div>
       </div>
-      {/* Carrousel */}
+      {/* Cards */}
       <div className="flex flex-row gap-6">
         {proyectsToRender &&
           proyectsToRender.map((e, index) => (

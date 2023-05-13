@@ -1,6 +1,7 @@
 import * as React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { useLayoutContext } from "../layout/Layout";
+import { motion } from "framer-motion";
 
 interface props {}
 
@@ -25,7 +26,12 @@ export default function About({}: props) {
 
   return (
     <section className="h-screen w-screen flex flex-row relative overflow-hidden">
-      <div className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col max-md:w-screen">
+      <motion.div
+        initial={""}
+        whileInView={"visible"}
+        viewport={{ once: true }}
+        className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col max-md:w-screen"
+      >
         <h2 className="text-blue-600 text-5xl select-none mt-4 font-bold">
           Desarrollador
         </h2>
@@ -52,7 +58,7 @@ export default function About({}: props) {
           </p>
         </div>
 
-        <div className="flex flex-row gap-8 my-4">
+        <div className="flex flex-row gap-8 my-auto">
           <button
             value={"contact"}
             onClick={handleClick}
@@ -67,7 +73,7 @@ export default function About({}: props) {
             CV
           </button>
         </div>
-      </div>
+      </motion.div>
       <div className="w-1/2 h-screen bg-about bg-cover max-md:hidden"></div>
     </section>
   );
