@@ -2,6 +2,8 @@ import * as React from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { CardProyect } from "../cardProyect/cardProyect";
 import { proyectsProps } from "@/constants";
+import { useWindowSize } from "@/hooks/useWindowSize";
+import { deviceType } from "@/utils/deviceType";
 
 interface props {}
 
@@ -11,11 +13,23 @@ export default function Proyects({}: props) {
 
   const [current, setCurrent] = React.useState(1);
 
+  const windowSize = useWindowSize();
+  const device = deviceType(windowSize?.width);
+
+  React.useEffect(() => {
+    console.log(device);
+  }, [device]);
+
   const totalPages = Math.ceil(proyectsProps.length / 3);
 
+  const selectDevice = (device: string | undefined) => {
+    if (device === "Desktop") return 3;
+    return 1;
+  };
+
   const proyectsToRender = proyectsProps.slice(
-    (current - 1) * 3,
-    (current - 1) * 3 + 3
+    (current - 1) * selectDevice(device),
+    (current - 1) * selectDevice(device) + selectDevice(device)
   );
 
   const handleNext = () => {
@@ -28,18 +42,18 @@ export default function Proyects({}: props) {
     return setCurrent(current - 1);
   };
 
-  const renderDots = (current: number) => {};
-
   return (
-    <section className="w-screen h-screen bg-white py-24 p-20 overflow-hidden relative">
+    <section className="w-screen h-screen bg-white py-24 p-20 overflow-hidden relative md:flex md:flex-col md:gap-12">
       {/* Title */}
-      <div>
-        <h2 className="text-4xl font-semibold text-slate-700">Proyectos</h2>
+      <div className="md:flex md:flex-col md:items-center md:justify-center">
+        <h2 className="text-4xl font-semibold text-slate-700 md:text-center">
+          Proyectos
+        </h2>
         <div className="w-[2rem] h-2 rounded-md bg-blue-600 my-2"></div>
       </div>
       {/* Buttons */}
-      <div className="w-scren flex flex-row-reverse my-2">
-        <div className="flex flex-row gap-4">
+      <div className="w-full flex flex-row-reverse my-2 md:items-center md:justify-center">
+        <div className="flex flex-row md:w-full gap-4 md:justify-between">
           <button
             onClick={handlePrev}
             onMouseEnter={() => setHoverLeft(true)}
@@ -65,7 +79,7 @@ export default function Proyects({}: props) {
         </div>
       </div>
       {/* Cards */}
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row gap-6 justify-center md:flex-col md:justify-center md:items-center">
         {proyectsToRender &&
           proyectsToRender.map((e, index) => (
             <CardProyect key={index} {...e} />

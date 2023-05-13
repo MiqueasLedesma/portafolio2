@@ -40,7 +40,7 @@ export default function Skills(props: props) {
         width={45}
         height={45}
       />
-      <div>
+      <div className="md:flex md:flex-col md:items-center md:justify-center">
         <h1 className="text-4xl font-semibold">Mi stack:</h1>
         <div className="w-[2rem] h-2 rounded-md bg-white my-2"></div>
       </div>
@@ -49,7 +49,7 @@ export default function Skills(props: props) {
         whileInView={{ translateX: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ amount: 0.5, root: ref }}
-        className="flex flex-row flex-wrap gap-[2rem] justify-center items-center my-auto"
+        className="flex flex-row flex-wrap gap-[2rem] justify-center items-center my-auto md:gap-[1rem]"
       >
         {cardProps.map((e) => (
           <CardSkill key={e.image} {...e} />

@@ -31,21 +31,21 @@ export default function Navbar({}: props) {
     <div className={poppins.className}>
       <nav className="fixed w-full h-20 p-6 top-0 flex items-center justify-between select-none z-20">
         <h2
-          className={`text-2xl max-md:text-xl font-semibold ${
+          className={`text-2xl md:text-xl font-semibold ${
             page && selectColorNavbar(page)
           }`}
         >
           Miqueas Ledesma
         </h2>
         <ul
-          className={`flex flex-row justify-center gap-8 max-md:text-sm font-semibold max-sm:hidden max-md:gap-4 ${
+          className={`flex flex-row justify-center gap-8 md:text-sm font-semibold sm:hidden md:gap-4 ${
             page && selectColorNavbar(page)
           }`}
         >
           <li
             value="about"
             onClick={handleClick}
-            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:md:text-sm ${
               currentPage == "about" && "border-b-2 text-lg border-current"
             }`}
           >
@@ -54,7 +54,7 @@ export default function Navbar({}: props) {
           <li
             value="skills"
             onClick={handleClick}
-            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:md:text-sm ${
               currentPage == "skills" && "border-b-2 text-lg border-current"
             }`}
           >
@@ -63,7 +63,7 @@ export default function Navbar({}: props) {
           <li
             value="proyects"
             onClick={handleClick}
-            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:max-md:text-sm ${
+            className={`hover:cursor-pointer hover:font-sans transition-all duration-150 hover:text-lg hover:border-b-2 hover:border-current hover:md:text-sm ${
               currentPage == "proyects" && "border-b-2 text-lg border-current"
             }`}
           >

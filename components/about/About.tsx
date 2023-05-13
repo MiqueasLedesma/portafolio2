@@ -26,12 +26,7 @@ export default function About({}: props) {
 
   return (
     <section className="h-screen w-screen flex flex-row relative overflow-hidden">
-      <motion.div
-        initial={""}
-        whileInView={"visible"}
-        viewport={{ once: true }}
-        className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col max-md:w-screen"
-      >
+      <div className="h-screen w-1/2 py-20 px-16 items-center gap-4 flex flex-col md:w-screen md:mt-4">
         <h2 className="text-blue-600 text-5xl select-none mt-4 font-bold">
           Desarrollador
         </h2>
@@ -43,14 +38,14 @@ export default function About({}: props) {
             repeat={Infinity}
           />
         </h2>
-        <div className="flex flex-col gap-8">
-          <h4 className="text-blue-600 text-2xl max-md:text-2xl select-none font-semibold">
+        <div className="flex flex-col gap-8 md:gap-12 md:pt-8">
+          <h4 className="text-blue-600 text-2xl md:text-2xl md:text-center select-none font-semibold">
             Bienvenido a mi portafolio.
           </h4>
-          <h4 className="text-slate-600 font-semibold text-lg max-md:text-xl select-none">
+          <h4 className="text-slate-600 font-semibold text-lg md:text-xl md:text-center select-none">
             Me encuentro actualmente desarrollando ideas y soluciones digitales.
           </h4>
-          <p className="text-slate-600 font-semibold text-sm select-none">
+          <p className="text-slate-600 font-semibold text-sm select-none md:text-justify">
             Mi objetivo es proporcionar un servicio excepcional que sea
             confiable, rápido y eficiente. Me enfoco en entender las necesidades
             de mis clientes y trabajo duro para asegurarme de que los resultados
@@ -73,8 +68,8 @@ export default function About({}: props) {
             CV
           </button>
         </div>
-      </motion.div>
-      <div className="w-1/2 h-screen bg-about bg-cover max-md:hidden"></div>
+      </div>
+      <div className="w-1/2 h-screen bg-about bg-cover md:hidden"></div>
     </section>
   );
 }

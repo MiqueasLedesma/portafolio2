@@ -16,7 +16,13 @@ export const CardSkill = (props: Props) => {
       onMouseLeave={() => setHover(false)}
       className="flex flex-col justify-center items-center select-none transition-all ease-in-out duration-500 relative"
     >
-      <Image src={image} alt="loading..." width={100} height={100} />
+      <Image
+        src={image}
+        alt="loading..."
+        width={100}
+        height={100}
+        className="md:w-[70px]"
+      />
       <div
         className={`${
           hover ? "visible" : "hidden"
