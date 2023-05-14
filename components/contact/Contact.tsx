@@ -99,7 +99,7 @@ export default function Contact({}: props) {
           <div className="w-[2rem] h-2 rounded-md bg-blue-600 my-2"></div>
         </div>
         <form className="grid grid-cols-12 gap-12">
-          {formProps && formProps.map((e) => <FieldContact {...e} />)}
+          {formProps && formProps.map((e, index) => <FieldContact key={index} {...e} />)}
           <button
             type="submit"
             className="bg-white border-[1px] p-4 w-fit h-fit rounded-lg border-blue-600 shadow-lg hover:shadow-xl hover:shadow-blue-600 transition-all ease-in shadow-blue-600 font-semibold text-blue-600 whitespace-nowrap"
