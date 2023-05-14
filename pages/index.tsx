@@ -46,6 +46,7 @@ export default function Home() {
     <>
       {open && <Modal />}
       <div
+        style={{ scrollSnapStop: "always" }}
         ref={scrollRef}
         onScroll={() => handleScroll()}
         className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen font-poppins"
