@@ -10,11 +10,11 @@ interface props {}
 export default function Contact({}: props) {
   return (
     <section className="h-screen w-screen bg-white">
-      <aside className="bg-[#0b1d40] w-1/4 h-screen py-20 flex flex-col justify-center items-center text-slate-400">
-        <div className="w-full px-6 flex-col gap-12 flex">
-          <div>
-            <h4 className="font-light">Mis Redes</h4>
-            <div className="flex flex-row gap-2 w-full">
+      <aside className="bg-[#0b1d40] w-1/4 h-screen py-20 flex flex-col justify-center md:justify-start md:py-0 items-center text-slate-400">
+        <div className="w-full px-6 flex-col gap-12 flex md:gap-0 md:h-full justify-around">
+          <div className="md:order-3 md:flex-col md:flex md:items-center">
+            <h4 className="font-light md:text-center">Mis Redes</h4>
+            <div className="flex flex-row gap-2 w-full md:justify-center md:p-2 md:gap-0 md:translate-y-[2rem] md:items-center">
               <a
                 href="https://www.instagram.com/miqueasledesma98/"
                 target="_blank"
@@ -38,11 +38,11 @@ export default function Contact({}: props) {
               </a>
             </div>
           </div>
-          <div>
+          <div className="md:order-2 md:rotate-90 md:flex-col md:flex md:items-center">
             <h4 className="font-light">Telefono</h4>
-            <h4 className="text-white">+54 3704 716194</h4>
+            <h4 className="text-white md:whitespace-nowrap">+54 3704 716194</h4>
           </div>
-          <div>
+          <div className="md:order-1 md:rotate-90 md:flex-col md:flex md:items-center md:translate-y-[3rem]">
             <h4 className="font-light">Email</h4>
             <a
               className="text-white"
@@ -50,10 +50,12 @@ export default function Contact({}: props) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              miqueasledesmadev@gmail.com
+              <h4 className="md:whitespace-nowrap md:text-xs">
+                miqueasledesmadev@gmail.com
+              </h4>
             </a>
           </div>
-          <h4 className="text-sm">
+          <h4 className="text-sm md:text-center md:hidden">
             Made it with{" "}
             <AiFillHeart
               size={18}
