@@ -31,7 +31,7 @@ export default function Navbar({}: props) {
     <div className={poppins.className}>
       <nav className="fixed w-full h-20 p-6 top-0 flex items-center justify-between select-none z-20">
         <h2
-          className={`text-2xl md:text-xl font-semibold ${
+          className={`text-2xl md:text-xl font-semibold md:hidden ${
             page && selectColorNavbar(page)
           }`}
         >

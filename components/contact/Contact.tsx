@@ -11,7 +11,7 @@ export default function Contact({}: props) {
   return (
     <section className="h-screen w-screen bg-white">
       <aside className="bg-[#0b1d40] w-1/4 h-screen py-20 flex flex-col justify-center md:justify-start md:py-0 items-center text-slate-400">
-        <div className="w-full px-6 flex-col gap-12 flex md:gap-0 md:h-full justify-around">
+        <div className="w-full px-6 flex-col gap-12 flex md:h-full justify-around">
           <div className="md:order-3 md:flex-col md:flex md:items-center">
             <h4 className="font-light md:text-center">Mis Redes</h4>
             <div className="flex flex-row gap-2 w-full md:justify-center md:p-2 md:gap-0 md:translate-y-[2rem] md:items-center">
