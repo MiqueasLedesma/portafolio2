@@ -46,7 +46,6 @@ export default function Home() {
     <>
       {open && <Modal />}
       <div
-        style={{ scrollSnapStop: "always" }}
         ref={scrollRef}
         onScroll={() => handleScroll()}
         className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen font-poppins"
@@ -57,7 +56,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ amount: 0.5, root: scrollRef }}
           id="about"
-          className="snap-start"
+          className="snap-start snap-always"
           ref={aboutRef}
         >
           <About />
@@ -68,7 +67,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           viewport={{ amount: 0.5, root: scrollRef }}
           id="skills"
-          className="snap-start"
+          className="snap-start snap-always"
           ref={skillsRef}
         >
           <Skills ref={scrollRef} />
@@ -79,7 +78,7 @@ export default function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ amount: 0.5, root: scrollRef }}
           id="proyects"
-          className="snap-start"
+          className="snap-start snap-always"
           ref={proyectsRef}
         >
           <Proyects />
@@ -90,7 +89,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ amount: 0.5, root: scrollRef }}
           id="contact"
-          className="snap-start"
+          className="snap-start snap-always"
           ref={contactRef}
         >
           <Contact />
