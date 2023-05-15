@@ -23,7 +23,7 @@ export const Modal = (props: Props) => {
           src={`/${image}`}
           alt="loading..."
           width={600}
-          height={400}
+          height={200}
           className="shadow-md shadow-slate-500 md:shadow-sm border-2 border-slate-500 border-solid"
         />
         <p className="text-center text-xl my-4">{desc}</p>

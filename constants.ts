@@ -69,7 +69,7 @@ const proyectsProps = [
   {
     image: "images/apptech.png",
     title: "TechStore",
-    desc: "Ecommerce de tecnologia lorem ipsum etc etc",
+    desc: "Formé parte de un grupo de 7 personas con las cuales creamos un e-commerce totalmente funcional desde cero, mi rol principal fué de Full-Stack. Las principales tecnologías usadas para dicha tienda virtual fueron: JavaScript, React, Redux, Material UI, NodeJS, Express, Sequelize y Git.",
     github: "https://github.com/ricardoyegros/PF-Frontend",
   },
   {
@@ -87,8 +87,8 @@ const proyectsProps = [
   {
     image: "images/estoreapp.png",
     title: "Frontend E-Store",
-    desc: "alk",
-    github: "",
+    desc: 'Work in progress, estoy realizando un ecomerce usando la api publica "Dummy Json" utilizando React, Redux y Styled-Components',
+    github: "https://github.com/MiqueasLedesma/ecommerce",
   },
 ];
 

@@ -6,6 +6,7 @@ import {
   AiFillHeart,
 } from "react-icons/ai";
 import { FieldContact } from "../input/fieldContact";
+
 interface props {}
 
 const formProps = [
@@ -16,26 +17,30 @@ const formProps = [
     type: "text",
   },
   {
-    htmlFor: "name",
-    label: "Nombre*",
-    placeholder: "Nombre completo",
+    htmlFor: "affair",
+    label: "Asunto*",
+    placeholder: "Nombre de empresa",
     type: "text",
   },
   {
-    htmlFor: "name",
-    label: "Nombre*",
-    placeholder: "Nombre completo",
+    htmlFor: "email",
+    label: "Correo electronico*",
+    placeholder: "Dirección de correo",
     type: "text",
   },
   {
-    htmlFor: "name",
-    label: "Nombre*",
-    placeholder: "Nombre completo",
+    htmlFor: "message",
+    label: "Mensaje*",
+    placeholder: "Ingrese su mensaje",
     type: "text",
   },
 ];
 
 export default function Contact({}: props) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="h-screen w-screen bg-white flex flex-row gap-24">
       <aside className="bg-[#0b1d40] w-1/4 h-screen py-20 flex flex-col justify-center md:justify-start md:py-0 items-center text-slate-400">
@@ -98,8 +103,9 @@ export default function Contact({}: props) {
           <h1 className="text-4xl font-semibold">Enviame un mensaje:</h1>
           <div className="w-[2rem] h-2 rounded-md bg-blue-600 my-2"></div>
         </div>
-        <form className="grid grid-cols-12 gap-12">
-          {formProps && formProps.map((e, index) => <FieldContact key={index} {...e} />)}
+        <form onSubmit={handleSubmit} className="grid grid-cols-12 gap-12">
+          {formProps &&
+            formProps.map((e, index) => <FieldContact key={index} {...e} />)}
           <button
             type="submit"
             className="bg-white border-[1px] p-4 w-fit h-fit rounded-lg border-blue-600 shadow-lg hover:shadow-xl hover:shadow-blue-600 transition-all ease-in shadow-blue-600 font-semibold text-blue-600 whitespace-nowrap"

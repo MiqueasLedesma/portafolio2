@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useLayoutContext } from "../layout/Layout";
-import selectColorNavbar from "@/utils/selectColorNavbar";
+import { selectTitleColor, selectUlColor } from "@/utils/selectColorNavbar";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -32,14 +32,14 @@ export default function Navbar({}: props) {
       <nav className="fixed w-full h-20 p-6 top-0 flex items-center justify-between select-none z-20">
         <h2
           className={`text-2xl md:text-xl font-semibold md:hidden ${
-            page && selectColorNavbar(page)
+            page && selectTitleColor(page)
           }`}
         >
           Miqueas Ledesma
         </h2>
         <ul
           className={`flex flex-row justify-center gap-8 md:text-sm font-semibold sm:hidden md:gap-4 ${
-            page && selectColorNavbar(page)
+            page && selectUlColor(page)
           }`}
         >
           <li

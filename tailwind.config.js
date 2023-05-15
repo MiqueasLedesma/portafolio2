@@ -15,6 +15,9 @@ module.exports = {
       backgroundImage: {
         about: "url('/images/about.png')",
       },
+      colors: {
+        'contact': '#0d6e7b',
+      },
       screens: {
         "2xl": { max: "1535px" },
         // => @media (max-width: 1535px) { ... }

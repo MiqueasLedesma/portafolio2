@@ -2,7 +2,22 @@ interface props {
   currentPage: string;
 }
 
-export default function selectColorNavbar({ currentPage }: props) {
+function selectTitleColor({ currentPage }: props) {
+  switch (currentPage) {
+    case "about":
+      return "text-blue-600";
+    case "skills":
+      return "text-white";
+    case "proyects":
+      return "text-blue-600";
+    case "contact":
+      return "text-white";
+    default:
+      return "text-white";
+  }
+}
+
+function selectUlColor({ currentPage }: props) {
   switch (currentPage) {
     case "about":
       return "text-black";
@@ -16,3 +31,5 @@ export default function selectColorNavbar({ currentPage }: props) {
       return "text-white";
   }
 }
+
+export { selectTitleColor, selectUlColor };
