@@ -5,6 +5,7 @@ import { Modal } from "@/components/modal/modal";
 import Proyects from "@/components/proyects/Proyects";
 import Skills from "@/components/skills/Skills";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import React from "react";
 
 export default function Home() {
@@ -44,6 +45,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>My Portafolio</title>
+        <link rel="icon" href="icons/port-icon.svg" />
+      </Head>
       {open && <Modal />}
       <div
         ref={scrollRef}
