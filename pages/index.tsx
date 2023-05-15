@@ -53,7 +53,7 @@ export default function Home() {
       <div
         ref={scrollRef}
         onScroll={() => handleScroll()}
-        className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen font-poppins will-change-scroll"
+        className="snap-y snap-mandatory overflow-auto overflow-x-hidden h-screen w-screen font-poppins scroll-m-0"
       >
         <motion.div
           initial={{ opacity: 0 }}
