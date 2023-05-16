@@ -42,7 +42,7 @@ export default function Contact({}: props) {
   };
 
   return (
-    <section className="h-screen w-screen bg-white flex flex-row gap-24">
+    <section className="h-screen w-screen bg-white flex flex-row gap-24 md:gap-4">
       <aside className="bg-[#0b1d40] w-1/4 h-screen py-20 flex flex-col justify-center md:justify-start md:py-0 items-center text-slate-400">
         <div className="w-full px-6 flex-col gap-12 flex md:h-full justify-around">
           <div className="md:order-3 md:flex-col md:flex md:items-center">
@@ -98,12 +98,18 @@ export default function Contact({}: props) {
           </h4>
         </div>
       </aside>
-      <div className="flex flex-col gap-12 w-full">
-        <div className="md:flex md:flex-col text-black md:items-center md:justify-center mt-14">
-          <h1 className="text-4xl font-semibold">Enviame un mensaje:</h1>
+
+      <div className="flex flex-col gap-12 w-full md:items-center md:justify-center md:pr-4">
+        <div className="md:flex md:flex-col text-black md:items-center md:justify-center mt-14 xs:mt-0">
+          <h1 className="text-4xl font-semibold md:text-xl">
+            Enviame un mensaje:
+          </h1>
           <div className="w-[2rem] h-2 rounded-md bg-blue-600 my-2"></div>
         </div>
-        <form onSubmit={handleSubmit} className="grid grid-cols-12 gap-12">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-12 gap-12 md:flex md:flex-col md:items-center xs:gap-6"
+        >
           {formProps &&
             formProps.map((e, index) => <FieldContact key={index} {...e} />)}
           <button

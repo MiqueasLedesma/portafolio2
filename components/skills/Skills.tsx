@@ -11,7 +11,7 @@ interface props {
 export default function Skills(props: props) {
   const { ref } = props;
   return (
-    <section className="w-screen h-screen bg-blue-700 py-24 p-20 snap-start select-none text-white flex flex-col gap-8 overflow-hidden relative">
+    <section className="w-screen h-screen bg-blue-700 py-24 p-20 snap-start select-none text-white flex flex-col gap-8 md:gap-8 overflow-hidden relative md:py-12 md:px-8">
       <Image
         className="absolute top-0 left-0"
         src="icons/cube32.svg"
@@ -40,6 +40,7 @@ export default function Skills(props: props) {
         width={45}
         height={45}
       />
+
       <div className="md:flex md:flex-col md:items-center md:justify-center">
         <h1 className="text-4xl font-semibold">Mi stack:</h1>
         <div className="w-[2rem] h-2 rounded-md bg-white my-2"></div>
@@ -49,7 +50,7 @@ export default function Skills(props: props) {
         whileInView={{ translateX: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ amount: 0.5, root: ref }}
-        className="flex flex-row flex-wrap gap-[2rem] justify-center items-center my-auto md:gap-[1rem]"
+        className="flex flex-row flex-wrap gap-[2rem] justify-center items-center h-full"
       >
         {cardProps.map((e) => (
           <CardSkill key={e.image} {...e} />

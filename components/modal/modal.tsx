@@ -26,7 +26,7 @@ export const Modal = (props: Props) => {
           height={200}
           className="shadow-md shadow-slate-500 md:shadow-sm border-2 border-slate-500 border-solid"
         />
-        <p className="text-center text-xl my-4">{desc}</p>
+        <p className="text-center text-xl xs:text-sm my-4">{desc}</p>
         <a
           href={github}
           target="_blank"

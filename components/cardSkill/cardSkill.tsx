@@ -21,7 +21,7 @@ export const CardSkill = (props: Props) => {
         alt="loading..."
         width={100}
         height={100}
-        className="md:w-[70px]"
+        className="xs:w-[60px]"
       />
       <div
         className={`${

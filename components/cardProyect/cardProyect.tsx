@@ -23,7 +23,7 @@ export const CardProyect = (props: Props) => {
       style={{
         backgroundImage: `url(${image})`,
       }}
-      className="bg-cover hover:bg-center transition-all ease-out duration-500 h-[350px] w-[400px] border-2 border-black hover:cursor-pointer"
+      className="bg-cover hover:bg-center transition-all ease-out duration-500 h-[350px] w-[400px] border-2 border-black hover:cursor-pointer xs:w-[90vw]"
     ></div>
   );
 };

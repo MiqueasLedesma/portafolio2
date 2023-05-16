@@ -9,9 +9,9 @@ function selectTitleColor({ currentPage }: props) {
     case "skills":
       return "text-white";
     case "proyects":
-      return "text-blue-600";
-    case "contact":
       return "text-white";
+    case "contact":
+      return "text-white/75";
     default:
       return "text-white";
   }
@@ -24,7 +24,7 @@ function selectUlColor({ currentPage }: props) {
     case "skills":
       return "text-white";
     case "proyects":
-      return "text-blue-600";
+      return "text-white/75";
     case "contact":
       return "text-black";
     default:
