@@ -52,6 +52,7 @@ export default function Contact({}: props) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setState(() => sendingState.SENDING);
     try {
       const sendForm = await apiClient.post("api/sendEmail", form);
