@@ -9,9 +9,9 @@ function selectTitleColor({ currentPage }: props) {
     case "skills":
       return "text-white";
     case "proyects":
-      return "text-white";
-    case "contact":
       return "text-white/75";
+    case "contact":
+      return "text-white";
     default:
       return "text-white";
   }

@@ -92,4 +92,31 @@ const proyectsProps = [
   },
 ];
 
-export { cardProps, proyectsProps };
+const formProps = [
+  {
+    htmlFor: "name",
+    label: "Nombre*",
+    placeholder: "Nombre completo",
+    type: "text",
+  },
+  {
+    htmlFor: "subject",
+    label: "Asunto*",
+    placeholder: "Nombre de empresa",
+    type: "text",
+  },
+  {
+    htmlFor: "email",
+    label: "Correo electronico*",
+    placeholder: "Dirección de correo",
+    type: "text",
+  },
+  {
+    htmlFor: "message",
+    label: "Mensaje*",
+    placeholder: "Ingrese su mensaje",
+    type: "text",
+  },
+];
+
+export { cardProps, proyectsProps, formProps };

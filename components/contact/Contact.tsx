@@ -6,40 +6,87 @@ import {
   AiFillHeart,
 } from "react-icons/ai";
 import { FieldContact } from "../input/fieldContact";
+import { formProps } from "@/constants";
+import apiClient from "@/axios.config";
+import { FormErrors, LoginValidate, checkErrors } from "@/utils/inputField";
 
 interface props {}
 
-const formProps = [
-  {
-    htmlFor: "name",
-    label: "Nombre*",
-    placeholder: "Nombre completo",
-    type: "text",
-  },
-  {
-    htmlFor: "affair",
-    label: "Asunto*",
-    placeholder: "Nombre de empresa",
-    type: "text",
-  },
-  {
-    htmlFor: "email",
-    label: "Correo electronico*",
-    placeholder: "Dirección de correo",
-    type: "text",
-  },
-  {
-    htmlFor: "message",
-    label: "Mensaje*",
-    placeholder: "Ingrese su mensaje",
-    type: "text",
-  },
-];
+export type FormContact = {
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
+};
+
+export enum sendingState {
+  NULL,
+  SENDING,
+  SUCCESS,
+  ERROR,
+}
 
 export default function Contact({}: props) {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const [form, setForm] = React.useState<FormContact>({
+    name: "",
+    subject: "",
+    email: "",
+    message: "",
+  });
+
+  const [error, setError] = React.useState<FormErrors>({
+    email: "",
+    name: "",
+    message: "",
+    subject: "",
+  });
+
+  const [state, setState] = React.useState<sendingState>(sendingState.NULL);
+
+  const propsFormInputs = {
+    form,
+    setForm,
+    error,
+    setError,
   };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setState(() => sendingState.SENDING);
+    try {
+      const sendForm = await apiClient.post("api/sendEmail", form);
+      if (sendForm.status == 200) {
+        setState(sendingState.SUCCESS);
+      }
+    } catch (error: any) {
+      setState(() => sendingState.ERROR);
+    }
+  };
+
+  function sendState(state: React.ComponentState) {
+    switch (state) {
+      case sendingState.NULL:
+        return <></>;
+      case sendingState.SENDING:
+        return (
+          <h4 className="inline-block whitespace-nowrap">Enviando Email...</h4>
+        );
+      case sendingState.SUCCESS:
+        return (
+          <h4 className="inline-block whitespace-nowrap">
+            Tu mensaje a sido enviado con exito!
+          </h4>
+        );
+      case sendingState.ERROR:
+        return (
+          <h4 className="inline-block whitespace-nowrap">
+            Ha ocurrido un error intente nuevamente!
+          </h4>
+        );
+      default:
+        return;
+    }
+  }
 
   return (
     <section className="h-screen w-screen bg-white flex flex-row gap-24 md:gap-4">
@@ -111,13 +158,21 @@ export default function Contact({}: props) {
           className="grid grid-cols-12 gap-12 md:flex md:flex-col md:items-center xs:gap-6"
         >
           {formProps &&
-            formProps.map((e, index) => <FieldContact key={index} {...e} />)}
-          <button
-            type="submit"
-            className="bg-white border-[1px] p-4 w-fit h-fit rounded-lg border-blue-600 shadow-lg hover:shadow-xl hover:shadow-blue-600 transition-all ease-in shadow-blue-600 font-semibold text-blue-600 whitespace-nowrap"
-          >
-            Enviar mesanje
-          </button>
+            formProps.map((e, index) => (
+              <FieldContact key={index} {...propsFormInputs} {...e} />
+            ))}
+          <div className="flex flex-col gap-4">
+            <button
+              type="submit"
+              disabled={
+                state === sendingState.SENDING || state === sendingState.SUCCESS
+              }
+              className={`bg-white border-[1px] p-4 w-fit h-fit rounded-lg border-blue-600 shadow-lg hover:shadow-xl hover:shadow-blue-600 transition-all ease-in shadow-blue-600 font-semibold text-blue-600 whitespace-nowrap disabled:shadow-none disabled:border-gray-300 disabled:text-gray-300`}
+            >
+              Enviar mensaje
+            </button>
+            {sendState(state)}
+          </div>
         </form>
       </div>
     </section>
